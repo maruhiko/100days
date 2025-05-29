@@ -1,0 +1,14 @@
+# apps/day001-todo/docker-compose.yaml
+
+version: "3.9"
+services:
+  web:
+    build: .
+    ports:
+      - "3000:3000"
+    volumes:
+      - .:/app
+    environment:
+      - RAILS_ENV=development
+    stdin_open: true
+    tty: true

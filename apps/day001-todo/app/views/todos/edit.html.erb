@@ -1,0 +1,17 @@
+<h1>ToDoを編集</h1>
+
+<%= form_with model: @todo do |f| %>
+  <div>
+    <%= f.label :title, '内容' %><br>
+    <%= f.text_field :title %>
+  </div>
+
+  <div>
+    <%= f.label :done, '完了' %>
+    <%= f.check_box :done %>
+  </div>
+
+  <%= f.submit '更新' %>
+<% end %>
+
+<%= link_to '一覧へ戻る', todos_path %>

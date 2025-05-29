@@ -1,0 +1,15 @@
+<h1>ToDo List</h1>
+
+<ul>
+  <% @todos.each do |todo| %>
+    <li>
+      <%= todo.title %>
+      <% if todo.done %>(完了)<% end %>
+
+      <%= link_to '編集', edit_todo_path(todo) %> |
+      <%= button_to '削除', todo_path(todo), method: :delete, data: { confirm: '本当に削除しますか？' } %>
+    </li>
+  <% end %>
+</ul>
+
+<%= link_to '新しいToDo', new_todo_path, data: { turbo: false } %>
